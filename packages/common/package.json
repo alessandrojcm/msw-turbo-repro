@@ -1,0 +1,28 @@
+{
+  "name": "common",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup index.ts --format esm,cjs --dts",
+    "dev": "tsup index.ts --format esm,cjs --watch --dts",
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "tsup": "^5.10.1"
+  },
+  "dependencies": {
+    "cross-fetch": "^3.1.5",
+    "ky": "^0.30.0",
+    "ky-universal": "^0.10.1",
+    "typescript": "^4.7.3"
+  }
+}
